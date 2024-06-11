@@ -23,6 +23,7 @@ This web application enables users to manage their daily tasks efficiently. User
 ### Development Setup:
 - Set up development environment
 - Initialize project on github
+
 ### System Planning:
 - Draft system archictecture
 - Draft system Requirements
@@ -30,9 +31,42 @@ This web application enables users to manage their daily tasks efficiently. User
 ### Design:
 - Create wireframes
 - Outline basic features
+
 ### Project Requirements
 - Outline Funtional requirements and Non functional requirements
 - Outline how to use application.
+
+### Project Plan - Day 2
+
+### Break Down Frontend Components into Smaller Fragments
+
+1. **Navbar**
+   - Design and implement the navigation bar.
+   
+2. **Header**
+   - Create a header component which includes a greeting.
+
+3. **Main**
+   - Develop the main component to serve as the container for the main content.
+   - Integrate state management to dynamically display todos.
+
+4. **Footer Optional**
+   - Implement the footer component with relevant information.
+
+5. **Add Todo**
+   - Create a form component to add new todos.
+   - Include input fields for title, description.
+   - Implement input validation.
+
+6. **Delete Todo**
+   - Add functionality to delete a todo.
+
+7. **Update Todo**
+   - Implement a component to update existing todos.
+
+8. **Persist Todos to Local Storage**
+    - incorporate local storage
+
 
 
 ### System Architecture Overview
