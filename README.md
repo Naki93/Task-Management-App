@@ -26,7 +26,7 @@ This web application enables users to manage their daily tasks efficiently. User
 ### System Planning:
 - Draft system archictecture
 - Draft system Requirements
-- Create user Stories
+
 ### Design:
 - Create wireframes
 - Outline basic features
