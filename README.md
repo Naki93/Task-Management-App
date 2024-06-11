@@ -1,4 +1,4 @@
-# Todo Management Application
+## Todo Management Application
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -15,7 +15,7 @@
 
 ### Daily Todo Management
 
-## Project Overview
+### Project Overview
 This web application enables users to manage their daily tasks efficiently. Users can create, update, delete view their their daily todos, as well as mark them as complete. This application will be utilizing local storage to ensure data persistence.
 
 ## Project Plan
@@ -27,16 +27,15 @@ This web application enables users to manage their daily tasks efficiently. User
 - Draft system archictecture
 - Draft system Requirements
 - Create user Stories
-## Design:
-- Create the single page application wireframe
+### Design:
+- Create wireframes
 - Outline basic features
-## Project Requirements
+### Project Requirements
 - Outline Funtional requirements and Non functional requirements
 - Outline how to use application.
-## Frontend Development
-- Build a few frontend components
 
-## System Architecture Overview
+
+### System Architecture Overview
 The application follows a client-server architecture, where the client (web browser) interacts with the server (backend) to access and manipulate data and it includes the following components:
 
 - **Frontend (Client):** This is the user interface of the website, including the layout design and navigation.
@@ -47,20 +46,20 @@ The application follows a client-server architecture, where the client (web brow
 - **Database:** The database module, stores and manages the data for the website such as daily todos and other relevant data.
 
 ### Web Stack and Choice of Architecture
-## Web Stack:
-** Frontend ** React + Vite is chosen for building dynamic user interfaces. It's component based architecture allows for modular development. React + Vite is a build tool that provides faster development compared to Create React App.
+### Web Stack:
+- **Frontend** React + Vite is chosen for building dynamic user interfaces. It's component based architecture allows for modular development. React + Vite is a build tool that provides faster development compared to Create React App.
 
--**Backend** Express.js will be used for building the server and API. This framework provides a flexible and modular way to build web applications and it makes it easy to build RESTFUL API's.
+- **Backend** Express.js will be used for building the server and API. This framework provides a flexible and modular way to build web applications and it makes it easy to build RESTFUL API's.
 
--**Database** To be confirmed
+- **Database** To be confirmed
 
--**Node js** Node js allows us to use javascript on both the client side and server side, making sharing code and skills between the two.
+- **Node js** Node js allows us to use javascript on both the client side and server side, making sharing code and skills between the two.
 
 ### Use of Tailwind
-## Reasons for using Tailwind
--**Consistent** Tailwind provides a consistent design language across the application, making it easier to maintain and update UI.
+### Reasons for using Tailwind
+- **Consistent** Tailwind provides a consistent design language across the application, making it easier to maintain and update UI.
 
--**Customizable** Tailwind is highly customizable, allowing you to tailor the framework to your specific needs.
+- **Customizable** Tailwind is highly customizable, allowing you to tailor the framework to your specific needs.
 
 ### Motivation for Architecture Choices
 
@@ -68,4 +67,20 @@ The application follows a client-server architecture, where the client (web brow
 
 - **Express.js:** Express provides a minimalist framework for building the backend, enabling rapid development of RESTful APIs and middleware for authentication and authorization.
 
+### System Requirements Specification
+
+### Target Users
+- **Anyone:** Anyone that desires to be productive through out the day by creating, editing, deleting and viewing their todos. 
+
+### Functional Requirements
+- User Registration and Authentication
+- Admin Authentication and Role Management
+- Todo creation, editing, and deletion
+- Todo Listing 
+- User-friendly interface
+- CRUD operations for daily todos
+
+### Non-Functional Requirements
+- **Usability:** User interfaces must be user-friendly, ensuring easy navigation and interaction.
+- **Accessibility:** The application should be accessible to users with disabilities in compliance with accessibility standards.
 
