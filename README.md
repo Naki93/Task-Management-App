@@ -70,11 +70,9 @@ The application follows a client-server architecture, where the client (web brow
 ### System Requirements Specification
 
 ### Target Users
-- **Anyone:** Anyone that desires to be productive through out the day by creating, editing, deleting and viewing their todos. 
+- **General Users:** Anyone that desires to be productive through out the day by creating, editing, deleting and viewing their todos. 
 
 ### Functional Requirements
-- User Registration and Authentication
-- Admin Authentication and Role Management
 - Todo creation, editing, and deletion
 - Todo Listing 
 - User-friendly interface
