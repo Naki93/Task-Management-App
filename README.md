@@ -8,7 +8,7 @@
 - [Setup Instructions](#setup-instructions)
 - [How To use App](#usage-instructions)
 - [Deployment](#deployment)
-- [Getting Started](#Getting Started)
+- [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact Information](#contact-information)
