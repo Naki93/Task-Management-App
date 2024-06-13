@@ -39,34 +39,44 @@ This web application enables users to manage their daily tasks efficiently. User
 ### Project Plan - Day 2
 
 ### Break Down Frontend Components into Smaller Fragments
-
-1. **Navbar**
-   - Design and implement the navigation bar.
    
-2. **Header**
+1. **Header**
    - Create a header component which includes a greeting.
 
-3. **Main**
-   - Develop the main component to serve as the container for the main content.
-   - Integrate state management to dynamically display todos.
+2. **Task List**
+   - Develop the main component to serve as the container for the main content and display the list of todos.
+   - Integrate state management to dynamically display todos and implement Logic.
 
-4. **Footer Optional**
-   - Implement the footer component with relevant information.
-
-5. **Add Todo**
+3. **Add Todo**
    - Create a form component to add new todos.
-   - Include input fields for title, description.
+   - Include input fields for adding a todo.
    - Implement input validation.
 
-6. **Delete Todo**
+4. **Delete Todo**
    - Add functionality to delete a todo.
 
-7. **Update Todo**
-   - Implement a component to update existing todos.
+5. **Update Todo**
+   - Implement a component to update existing todos and add functionality.
 
-8. **Persist Todos to Local Storage**
+6. **Persist Todos to Local Storage**
     - incorporate local storage
 
+### Main Challenge For Day 2
+- Incorporating a toggle feature within the frontend 
+
+
+### Project Plan - Day 3
+
+### Backend RESTFUL API using Node.js and Express. js
+
+1. **Backend**
+- Create a server within the backend of my project in a file named index.js.
+- Install Express.js
+- Implement basic api endpoints to GET, POST, PUT and DELETE todos
+- Create an in memory database to store all the todos
+
+### Main Challenge For Day 3
+- Upon intergrating RESTFul API's, I've encountered an issue related to data persistence. It appears that data stored in the in-memory array (todos) on the server does not persist across server when it restarts.
 
 
 ### System Architecture Overview
