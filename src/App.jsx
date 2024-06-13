@@ -1,45 +1,65 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import TodoForm from './Components/TodoForm';
 import TodoList from './Components/TodoList';
-import EditTodo from './Components/EditTodo';
-import Header from './Components/Header';
-import TodoForm from './Components/TodoForm'
+import Header from './Components/Header'
 
-
-
-function App() {
-
-  // Handle adding a new todo
-  const handleAddTodo = async (todoText) => {
-    try {
-      const response = await fetch('http://localhost:3001/api/todos', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ text: todoText }),
-      });
-
-      if (response.ok) {
-        // Fetch updated todos from the backend
-        fetchTodos();
-      } else {
-        console.error('Error adding todo:', response.statusText);
+const App = () => {
+  // State to hold our list of tasks
+  const [todos, setTodos] = useState([]);
+  useEffect(() => {
+    const fetchTodos = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/todos');
+        if (!response.ok) {
+          throw new Error('Failed to fetch todos');
+        }
+        const data = await response.json();
+        setTodos(data);
+        localStorage.setItem('todos', JSON.stringify(data));
+      } catch (error) {
+        console.error('Error fetching todos', error);
+        // If fetch fails, fallback to todos from localStorage
+        const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
+        setTodos(savedTodos);
       }
-    } catch (error) {
-      console.error('Network error:', error);
-    }
+    };
+
+    fetchTodos(); // Initial fetch of todos
+  }, []);
+
+  // Effect to update localStorage whenever todos change
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
+  // Function to add a new task to our list
+  const addTodo = (newTodo) => {
+    setTodos([...todos, newTodo]);
   };
+
 
   return (
     <div>
       <Header />
-      <TodoForm onAddTodo={handleAddTodo} />
-      <TodoList />
-    </div>
-  )
-}
+      <div className="container ">
 
-export default App
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="card mt-5 shadow-lg shadow-indigo-500/50">
+              {/* <Header /> */}
+              <div className="card-body">
+                <h3 className="card-title text-center">Todo List</h3>
+                <TodoForm addTodo={addTodo} />
+                <TodoList todos={todos} setTodos={setTodos} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default App;
+
 

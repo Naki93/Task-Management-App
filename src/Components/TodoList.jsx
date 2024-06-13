@@ -1,149 +1,101 @@
-// TodoList.js
-import React, { useState, useEffect } from 'react';
-import TodoForm from './TodoForm';
-import EditTodo from './EditTodo';
+import React, { useState } from 'react';
+import DeleteIcon from '@mui/icons-material/DeleteOutlined';
+import EditIcon from '@mui/icons-material/Edit';
 
-function TodoList() {
-    const [todos, setTodos] = useState([]);
-    const [editingTodoId, setEditingTodoId] = useState(null);
 
-    // Fetch todos when component mounts
-    useEffect(() => {
-        fetchTodos();
-    }, []);
+const TodoList = ({ todos, setTodos }) => {
+    const [editId, setEditId] = useState(null);
+    const [editTask, setEditTask] = useState('');
 
-    // Fetch todos from the backend
-    const fetchTodos = async () => {
+    const handleEditChange = (e) => {
+        setEditTask(e.target.value);
+    };
+
+    const handleEditSubmit = async (id) => {
+        const updatedTodo = { id, task: editTask, completed: false };
         try {
-            const response = await fetch('http://localhost:3001/api/todos', {
-                method: 'GET',
+            await fetch(`http://localhost:5000/todos/${id}`, {
+                method: 'PUT',
                 headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
                     'Content-Type': 'application/json',
                 },
+                body: JSON.stringify(updatedTodo),
             });
-
-            if (response.ok) {
-                const data = await response.json();
-
-                setTodos(data.todos);
-
-            } else {
-                console.error('Error fetching todos:', response.statusText);
-            }
+            setTodos(todos.map(todo => (todo.id === id ? updatedTodo : todo)));
+            setEditId(null);
         } catch (error) {
-            console.error('Network error:', error);
+            console.error('Error editing todo', error);
         }
     };
-    // // Handle adding a new todo
-    // const handleAddTodo = async (todoText) => {
-    //     try {
-    //         const response = await fetch('http://localhost:3001/api/todos', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Authorization': `Bearer ${localStorage.getItem('token')}`,
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify({ text: todoText }),
-    //         });
 
-    //         if (response.ok) {
-    //             // Fetch updated todos from the backend
-    //             fetchTodos();
-    //         } else {
-    //             console.error('Error adding todo:', response.statusText);
-    //         }
-    //     } catch (error) {
-    //         console.error('Network error:', error);
-    //     }
-    // };
-
-
-    // Handle saving an edited todo
-    const handleSaveEdit = (todoId, editedText) => {
-        const updatedTodos = todos.map((todo) =>
-            todo.id === todoId ? { ...todo, text: editedText } : todo
-        );
-        setTodos(updatedTodos);
-        setEditingTodoId(null);
-    };
-    // Handle deleting a todo
-    const handleDeleteClick = async (todoId) => {
+    const handleDelete = async (id) => {
         try {
-            const response = await fetch(`http://localhost:3001/api/todos/${todoId}`, {
+            await fetch(`http://localhost:5000/todos/${id}`, {
                 method: 'DELETE',
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                    'Content-Type': 'application/json',
-                },
             });
-
-            if (response.ok) {
-                // Fetch updated todos from the backend
-                fetchTodos();
-            } else {
-                console.error('Error deleting todo:', response.statusText);
-            }
+            setTodos(todos.filter(todo => todo.id !== id));
         } catch (error) {
-            console.error('Network error:', error);
+            console.error('Error deleting todo', error);
         }
     };
-    // Handle marking a todo as read
-    const handleMarkAsRead = async (todoId) => {
-        try {
-            const response = await fetch(`http://localhost:3001/api/todos/${todoId}/mark-as-read`, {
-                method: 'PATCH',
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ isRead: true }),
-            });
-
-            if (response.ok) {
-                // Fetch updated todos from the backend
-                console.log('Todo marked as read successfully:', todoId);
-                fetchTodos();
-            } else {
-                console.error('Error marking todo as read:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Network error:', error);
-        }
-    };
-
 
     return (
-        <div>
-            <h2>Todo List</h2>
-
-            {/* Map through todos and render each one */}
-            <ul>
+        <table className="table table-striped">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
                 {todos.map((todo) => (
-                    <li key={todo.id}>
-                        {editingTodoId === todo.id ? (
-                            <EditTodo
-                                todoId={todo.id}
-                                initialText={todo.text}
-                                onSaveEdit={handleSaveEdit}
-                            />
-                        ) : (
-                            <>
+                    <tr key={todo.id}>
+                        <td>
+                            {editId === todo.id ? (
                                 <input
-                                    type="checkbox"
-                                    checked={todo.isRead}
-                                    onChange={() => handleMarkAsRead(todo.id)}
+                                    type="text"
+                                    value={editTask}
+                                    onChange={handleEditChange}
+                                    className="form-control"
                                 />
-                                {todo.text}
-                                <button onClick={() => setEditingTodoId(todo.id)}>Edit</button>
-                                <button onClick={() => handleDeleteClick(todo.id)}>Delete</button>
-                            </>
-                        )}
-                    </li>
+                            ) : (
+                                todo.task
+                            )}
+                        </td>
+                        <td>
+                            {editId === todo.id ? (
+                                <button
+                                    className="btn btn-success me-2"
+                                    onClick={() => handleEditSubmit(todo.id)}
+                                >
+                                    Save
+                                </button>
+                            ) : (
+                                <>
+                                    <button
+                                        // className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-3 rounded-full"
+                                        onClick={() => {
+                                            setEditId(todo.id);
+                                            setEditTask(todo.task);
+                                        }}
+                                    >
+                                        <EditIcon />
+                                    </button>
+                                    <button
+                                        // className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded-full"
+                                        onClick={() => handleDelete(todo.id)}
+                                    >
+                                        <DeleteIcon />
+                                    </button>
+                                </>
+                            )}
+                        </td>
+                    </tr>
                 ))}
-            </ul>
-        </div>
+            </tbody>
+        </table>
     );
-}
+};
 
 export default TodoList;
+

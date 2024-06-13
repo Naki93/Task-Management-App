@@ -28,8 +28,8 @@ function currentTime() {
 
 function Header({ completed }) {
     return (
-        <div className="flex justify-center card ">
-            <h1 className="mt-8">{currentTime()} <br />What Are Your<br /> <span className=" -mt-8 bg-sky-300 ml-5">Plans For Today?</span></h1>
+        <div className="flex justify-center ">
+            <h1 className="mt-4 text-2xl">{currentTime()}</h1>
             {/* <p>You have {completed} Todos</p> */}
 
         </div>
