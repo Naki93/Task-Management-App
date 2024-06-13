@@ -95,11 +95,11 @@ The application follows a client-server architecture, where the client (web brow
 
 - **Backend** Express.js will be used for building the server and API. This framework provides a flexible and modular way to build web applications and it makes it easy to build RESTFUL API's.
 
-- **Database** To be confirmed
+- **Database** data is stored in the in-memory array
 
 - **Node js** Node js allows us to use javascript on both the client side and server side, making sharing code and skills between the two.
 
-### Use of Tailwind
+### Use of Tailwind + Bootstrap + Material UI
 ### Reasons for using Tailwind
 - **Consistent** Tailwind provides a consistent design language across the application, making it easier to maintain and update UI.
 
