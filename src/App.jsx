@@ -3,7 +3,7 @@ import TodoForm from './Components/TodoForm';
 import TodoList from './Components/TodoList';
 import Header from './Components/Header'
 
-const App = () => {
+function App() {
   // State to hold our list of tasks
   const [todos, setTodos] = useState([]);
   useEffect(() => {
@@ -34,6 +34,9 @@ const App = () => {
 
   // Function to add a new task to our list
   const addTodo = (newTodo) => {
+    //todos is the current state array containing the list of todo items.
+    //The syntax [...] is the spread operator, it will create a new array by copying all elements of the todos array.
+    //newTodo is the new task object that will be added to the list.
     setTodos([...todos, newTodo]);
   };
 

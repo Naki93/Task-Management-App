@@ -1,18 +1,23 @@
 import React, { useState } from 'react'
 // import AddCircleIcon from '@material-ui/icons/AddCircle';
 
-const TodoForm = ({ addTodo }) => {
+function TodoForm({ addTodo }) {
+    // State to keep track of the new task input by the user
     const [task, setTask] = useState('');
-
+    // Function to handle form submission
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault();// Prevents the default form submission behavior
+
+        // Check if the input task is not empty
         if (task.trim()) {
+            // Create a new todo object
             const newTodo = {
-                id: Date.now(),
-                task,
-                completed: false,
+                id: Date.now(),// Generate a unique ID based on the current timestamp
+                task,// The task text input by the user
+                completed: false,// Initially set the completed status to false
             };
             try {
+                // Send a POST request to add the new todo to the backend server
                 const response = await fetch('http://localhost:5000/todos', {
                     method: 'POST',
                     headers: {
