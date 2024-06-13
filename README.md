@@ -78,6 +78,8 @@ This web application enables users to manage their daily tasks efficiently. User
 ### Main Challenge For Day 3
 - Upon intergrating RESTFul API's, I've encountered an issue related to data persistence. It appears that data stored in the in-memory array (todos) on the server does not persist across server when it restarts.
 
+### Improvements
+- Adding try catch to the endpoints, so that errors maybe handled effectively.
 
 ### System Architecture Overview
 The application follows a client-server architecture, where the client (web browser) interacts with the server (backend) to access and manipulate data and it includes the following components:
