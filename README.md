@@ -8,7 +8,7 @@
 - [Setup Instructions](#setup-instructions)
 - [How To use App](#usage-instructions)
 - [Deployment](#deployment)
-- [Bonus Features](#bonus-features)
+- [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact Information](#contact-information)
@@ -39,34 +39,44 @@ This web application enables users to manage their daily tasks efficiently. User
 ### Project Plan - Day 2
 
 ### Break Down Frontend Components into Smaller Fragments
-
-1. **Navbar**
-   - Design and implement the navigation bar.
    
-2. **Header**
+1. **Header**
    - Create a header component which includes a greeting.
 
-3. **Main**
-   - Develop the main component to serve as the container for the main content.
-   - Integrate state management to dynamically display todos.
+2. **Task List**
+   - Develop the main component to serve as the container for the main content and display the list of todos.
+   - Integrate state management to dynamically display todos and implement Logic.
 
-4. **Footer Optional**
-   - Implement the footer component with relevant information.
-
-5. **Add Todo**
+3. **Add Todo**
    - Create a form component to add new todos.
-   - Include input fields for title, description.
+   - Include input fields for adding a todo.
    - Implement input validation.
 
-6. **Delete Todo**
+4. **Delete Todo**
    - Add functionality to delete a todo.
 
-7. **Update Todo**
-   - Implement a component to update existing todos.
+5. **Update Todo**
+   - Implement a component to update existing todos and add functionality.
 
-8. **Persist Todos to Local Storage**
+6. **Persist Todos to Local Storage**
     - incorporate local storage
 
+### Main Challenge For Day 2
+- Incorporating a toggle feature within the frontend 
+
+
+### Project Plan - Day 3
+
+### Backend RESTFUL API using Node.js and Express. js
+
+1. **Backend**
+- Create a server within the backend of my project in a file named index.js.
+- Install Express.js
+- Implement basic api endpoints to GET, POST, PUT and DELETE todos
+- Create an in memory database to store all the todos
+
+### Main Challenge For Day 3
+- Upon intergrating RESTFul API's, I've encountered an issue related to data persistence. It appears that data stored in the in-memory array (todos) on the server does not persist across server when it restarts.
 
 
 ### System Architecture Overview
@@ -85,11 +95,11 @@ The application follows a client-server architecture, where the client (web brow
 
 - **Backend** Express.js will be used for building the server and API. This framework provides a flexible and modular way to build web applications and it makes it easy to build RESTFUL API's.
 
-- **Database** To be confirmed
+- **Database** data is stored in the in-memory array
 
 - **Node js** Node js allows us to use javascript on both the client side and server side, making sharing code and skills between the two.
 
-### Use of Tailwind
+### Use of Tailwind + Bootstrap + Material UI
 ### Reasons for using Tailwind
 - **Consistent** Tailwind provides a consistent design language across the application, making it easier to maintain and update UI.
 
@@ -115,4 +125,45 @@ The application follows a client-server architecture, where the client (web brow
 ### Non-Functional Requirements
 - **Usability:** User interfaces must be user-friendly, ensuring easy navigation and interaction.
 - **Accessibility:** The application should be accessible to users with disabilities in compliance with accessibility standards.
+
+### Getting Started
+- Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+- Ensure you have the following installed on your local machine:
+
+`Node.js (version 14.x or higher recommended)`
+`npm (comes with Node.js) or Yarn`
+
+### Installation
+
+Clone the repository
+
+`git clone https://github.com/your-username/your-repository-name.git`
+- cd your-repository-name
+- Install dependencies
+
+- Navigate to the root directory of your project and run the following command to install all necessary dependencies:
+
+`npm install`
+
+### Install backend dependencies
+
+- Navigate to the backend directory and install the necessary dependencies:
+
+cd backend
+`npm install`
+Running the Application
+Start the backend server
+
+From the backend directory, start the backend server:
+`npm index.js`
+This will run the server on http://localhost:5000.
+
+### Start the frontend application
+
+- Navigate back to the root directory and start the React application:
+
+`npm run dev`
+This will run the React app on http://localhost:5173.
 
