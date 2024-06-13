@@ -61,8 +61,8 @@ This web application enables users to manage their daily tasks efficiently. User
 6. **Persist Todos to Local Storage**
     - incorporate local storage
 
-`### Main Challenge For Day 2`
-`- Incorporating a toggle feature within the frontend `
+### Main Challenge For Day 2
+- Incorporating a toggle feature within the frontend 
 
 
 ### Project Plan - Day 3
@@ -75,8 +75,8 @@ This web application enables users to manage their daily tasks efficiently. User
 - Implement basic api endpoints to GET, POST, PUT and DELETE todos
 - Create an in memory database to store all the todos
 
-`### Main Challenge For Day 3`
-`- Upon intergrating RESTFul API's, I've encountered an issue related to data persistence. It appears that data stored in the in-memory array (todos) on the server does not persist across server when it restarts.`
+### Main Challenge For Day 3
+- Upon intergrating RESTFul API's, I've encountered an issue related to data persistence. It appears that data stored in the in-memory array (todos) on the server does not persist across server when it restarts.
 
 
 ### System Architecture Overview
