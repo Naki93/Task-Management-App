@@ -8,7 +8,7 @@
 - [Setup Instructions](#setup-instructions)
 - [How To use App](#usage-instructions)
 - [Deployment](#deployment)
-- [Bonus Features](#bonus-features)
+- [Getting Started](#Getting Started)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact Information](#contact-information)
@@ -125,4 +125,45 @@ The application follows a client-server architecture, where the client (web brow
 ### Non-Functional Requirements
 - **Usability:** User interfaces must be user-friendly, ensuring easy navigation and interaction.
 - **Accessibility:** The application should be accessible to users with disabilities in compliance with accessibility standards.
+
+### Getting Started
+- Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+- Ensure you have the following installed on your local machine:
+
+`Node.js (version 14.x or higher recommended)`
+`npm (comes with Node.js) or Yarn`
+
+### Installation
+
+Clone the repository
+
+`git clone https://github.com/your-username/your-repository-name.git`
+- cd your-repository-name
+- Install dependencies
+
+- Navigate to the root directory of your project and run the following command to install all necessary dependencies:
+
+`npm install`
+
+### Install backend dependencies
+
+- Navigate to the backend directory and install the necessary dependencies:
+
+cd backend
+`npm install`
+Running the Application
+Start the backend server
+
+From the backend directory, start the backend server:
+`npm index.js`
+This will run the server on http://localhost:5000.
+
+### Start the frontend application
+
+- Navigate back to the root directory and start the React application:
+
+`npm run dev`
+This will run the React app on http://localhost:5173.
 
