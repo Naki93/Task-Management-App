@@ -168,6 +168,17 @@ The application follows a client-server architecture, where the client (web brow
 - **Usability:** User interfaces must be user-friendly, ensuring easy navigation and interaction.
 - **Accessibility:** The application should be accessible to users with disabilities in compliance with accessibility standards.
 
+### How to Use the App
+
+### Creating New Todo:
+You can create a new todo using the input field and click the button add and your new todo will be displayed within a table.
+### Editing Todo:
+Next to your new task you can click the "pencil" icon to edit a task, a form input will be displayed where you can update your task and then click save to update
+### Deleting Todo:
+To delete a task, click the "Bin" icon located next to the "pencil" icon within the table.
+Updating Todo Completeness:
+To update and choose whether the task has been completed or not, click the round button next to the task
+
 ### Getting Started
 - Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
