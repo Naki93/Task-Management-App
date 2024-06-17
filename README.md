@@ -81,17 +81,16 @@ This web application enables users to manage their daily tasks efficiently. User
 ### Improvements
 - Adding try catch to the endpoints, so that errors maybe handled effectively.
 
-Day 4: Incorporating MySQL Database
-Objectives:
-Set up MySQL database.
-Integrate MySQL with the backend.
-Modify existing API endpoints to interact with MySQL.
-Tasks:
-Set Up MySQL Database
-
-Install MySQL on my local machine.
-Create a database for my project.
-Create tables for storing todos with appropriate fields (e.g., id, task, completed).
+### Day 4: Incorporating MySQL Database
+### Objectives:
+- Set up MySQL database.
+- Integrate MySQL with the backend.
+- Modify existing API endpoints to interact with MySQL.
+### Tasks:
+- Set Up MySQL Database
+- Install MySQL on my local machine.
+- Create a database for my project.
+- Create tables for storing todos with appropriate fields (e.g., id, task, completed).
 
 `CREATE TABLE todos (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -100,32 +99,27 @@ Create tables for storing todos with appropriate fields (e.g., id, task, complet
 );`
 
 
-Integrate MySQL with Backend
+- Integrate MySQL with Backend
 
-Install MySQL Node.js driver (mysql2).
-Establish a connection to the MySQL database from Node.js server.
-Update the API endpoints to use MySQL for data persistence.
-Modify API Endpoints
+- Install MySQL Node.js driver (mysql2).
+- Establish a connection to the MySQL database from Node.js server.
+- Update the API endpoints to use MySQL for data persistence.
+- Modify API Endpoints
 
-GET /todos: Retrieve todos from the MySQL database.
-POST /todos: Insert new todos into the MySQL database.
-PUT /todos/
+- GET /todos: Retrieve todos from the MySQL database.
+- POST /todos: Insert new todos into the MySQL database.
+- PUT /todos/
 : Update existing todos in the MySQL database.
-DELETE /todos/
+- DELETE /todos/
 : Delete todos from the MySQL database.
-Error Handling and Validation
 
-Add error handling for database operations.
-Validate data before inserting or updating records in the database.
-Testing
-
-Main Challenge for Day 4:
-Learning MySQL and ensuring proper integration with your Node.js backend.
+### Main Challenge for Day 4:
+- Learning MySQL and ensuring proper integration with your Node.js backend.
 
 
-Day 5: Finalizing the Project and Testing
-Finalized the database integration.
-Implemented remaining features and improvements.
+### Day 5: Finalizing the Project and Testing
+- Finalized the database integration.
+- Implemented remaining features and improvements.
 
 ### System Architecture Overview
 The application follows a client-server architecture, where the client (web browser) interacts with the server (backend) to access and manipulate data and it includes the following components:
