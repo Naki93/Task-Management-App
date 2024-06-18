@@ -78,6 +78,48 @@ This web application enables users to manage their daily tasks efficiently. User
 ### Main Challenge For Day 3
 - Upon intergrating RESTFul API's, I've encountered an issue related to data persistence. It appears that data stored in the in-memory array (todos) on the server does not persist across server when it restarts.
 
+### Improvements
+- Adding try catch to the endpoints, so that errors maybe handled effectively.
+
+### Day 4: Incorporating MySQL Database
+### Objectives:
+- Set up MySQL database.
+- Integrate MySQL with the backend.
+- Modify existing API endpoints to interact with MySQL.
+### Tasks:
+- Set Up MySQL Database
+- Install MySQL on my local machine.
+- Create a database for my project.
+- Create tables for storing todos with appropriate fields (e.g., id, task, completed).
+
+`CREATE TABLE todos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  task VARCHAR(255) NOT NULL,
+  completed BOOLEAN NOT NULL DEFAULT FALSE
+);`
+
+
+- Integrate MySQL with Backend
+
+- Install MySQL Node.js driver (mysql2).
+- Establish a connection to the MySQL database from Node.js server.
+- Update the API endpoints to use MySQL for data persistence.
+- Modify API Endpoints
+
+- GET /todos: Retrieve todos from the MySQL database.
+- POST /todos: Insert new todos into the MySQL database.
+- PUT /todos/
+: Update existing todos in the MySQL database.
+- DELETE /todos/
+: Delete todos from the MySQL database.
+
+### Main Challenge for Day 4:
+- Learning MySQL and ensuring proper integration with your Node.js backend.
+
+
+### Day 5: Finalizing the Project and Testing
+- Finalized the database integration.
+- Implemented remaining features and improvements.
 
 ### System Architecture Overview
 The application follows a client-server architecture, where the client (web browser) interacts with the server (backend) to access and manipulate data and it includes the following components:
@@ -125,6 +167,17 @@ The application follows a client-server architecture, where the client (web brow
 ### Non-Functional Requirements
 - **Usability:** User interfaces must be user-friendly, ensuring easy navigation and interaction.
 - **Accessibility:** The application should be accessible to users with disabilities in compliance with accessibility standards.
+
+### How to Use the App
+
+### Creating New Todo:
+You can create a new todo using the input field and click the button add and your new todo will be displayed within a table.
+### Editing Todo:
+Next to your new task you can click the "pencil" icon to edit a task, a form input will be displayed where you can update your task and then click save to update
+### Deleting Todo:
+To delete a task, click the "Bin" icon located next to the "pencil" icon within the table.
+Updating Todo Completeness:
+To update and choose whether the task has been completed or not, click the round button next to the task
 
 ### Getting Started
 - Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
