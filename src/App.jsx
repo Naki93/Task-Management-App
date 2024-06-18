@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import TodoForm from './Components/TodoForm';
 import TodoList from './Components/TodoList';
-import Header from './Components/Header'
+import Header from './Components/Header';
+
 
 function App() {
   // State to hold our list of tasks
   const [todos, setTodos] = useState([]);
+
   useEffect(() => {
     const fetchTodos = async () => {
       try {
@@ -25,6 +27,9 @@ function App() {
     };
 
     fetchTodos(); // Initial fetch of todos
+    return () => {
+      setTodos([])
+    }
   }, []);
 
   // Effect to update localStorage whenever todos change
@@ -43,6 +48,7 @@ function App() {
 
   return (
     <div>
+
       <Header />
       <div className="container ">
 
