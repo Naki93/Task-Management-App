@@ -15,6 +15,9 @@
 
 ### Daily Todo Management
 
+
+![todo](https://github.com/user-attachments/assets/49f5012e-fa72-441f-8863-a273efacf077)
+
 ### Project Overview
 This web application enables users to manage their daily tasks efficiently. Users can create, update, delete view their their daily todos, as well as mark them as complete. This application will be utilizing local storage to ensure data persistence.
 
